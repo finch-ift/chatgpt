@@ -240,6 +240,8 @@ function switchConv(key) {
     addItem(msg.role, msg.content)
   });
   convId = key.substring(convKey.length);
+  systemPromptInput.value = messages[0].content;
+  saveSettings();
 }
 
 function deleteConv(key) {
@@ -637,7 +639,7 @@ const transcriptions = (file) => {
   formData.append("model", "whisper-1");
   formData.append("file", file);
   formData.append("response_format", "json");
-  fetch("https://openai.icsq.xyz/v1/audio/transcriptions", {
+  fetch(`${config.domain}/v1/audio/transcriptions`, {
     method: "POST",
     headers: {
       "Authorization": "Bearer " + config.apiKey,
