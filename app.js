@@ -480,7 +480,7 @@ const textToSpeech = async (text, options = {}) => {
   }
 
   // Detect language using franc library
-  const { franc } = await import("https://cdn.jsdelivr.net/npm/franc@6.1.0/+esm");
+  const { franc } = await import("https://fastly.jsdelivr.net/npm/franc@6.1.0/+esm");
   let lang = franc(text);
   if (lang === "" || lang === "und") {
     lang = navigator.language
