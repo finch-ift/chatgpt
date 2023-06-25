@@ -41,6 +41,13 @@ line.addEventListener("keydown", (e) => {
   }
 })
 
+line.addEventListener("keydown", (e) => {
+  if (e.key == "Enter" && !e.shiftKey) {
+    e.preventDefault();
+  }
+})
+// && (e.ctrlKey || e.altKey)
+
 line.addEventListener("paste", (e) => {
   e.preventDefault()
 
