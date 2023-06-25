@@ -34,16 +34,17 @@ window.addEventListener("keydown", (e) => {
   }
 }, { passive: false })
 
-line.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    e.preventDefault()
-    onSend()
-  }
-})
+// line.addEventListener("keydown", (e) => {
+//   if (e.key == "Enter") {
+//     e.preventDefault()
+//     onSend()
+//   }
+// })
 
 line.addEventListener("keydown", (e) => {
   if (e.key == "Enter" && !e.shiftKey) {
     e.preventDefault();
+    onSend();
   }
 })
 // && (e.ctrlKey || e.altKey)
