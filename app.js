@@ -35,7 +35,7 @@ window.addEventListener("keydown", (e) => {
 }, { passive: false })
 
 line.addEventListener("keydown", (e) => {
-  if (e.key == "Enter" && (e.ctrlKey || e.altKey)) {
+  if (e.key == "Enter") {
     e.preventDefault()
     onSend()
   }
